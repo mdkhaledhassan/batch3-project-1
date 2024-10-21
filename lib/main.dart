@@ -1,7 +1,8 @@
+import 'package:f3_project_1/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'screens/home_screen.dart';
+import 'screens/login_screeen.dart';
 
 final box = GetStorage();
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Batch-3 Project-1',
-      home: HomeScreen(),
+      home: box.read('token') != null ? HomeScreen() : LoginScreeen(),
     );
   }
 }

@@ -62,7 +62,7 @@ class Server {
 
   postRequest({required String endPoint, Map<String, dynamic>? body}) async {
     try{
-      var response = await dio.get(endPoint,options: Options(
+      var response = await dio.post(endPoint,options: Options(
         headers: headers(), 
         validateStatus: (status) {
           return status! < 500;
@@ -79,7 +79,7 @@ class Server {
 
   postRequestWithToken({required String endPoint, Map<String, dynamic>? body}) async {
     try{
-      var response = await dio.get(endPoint,options: Options(
+      var response = await dio.post(endPoint,options: Options(
         headers: headersWithToken(), 
         validateStatus: (status) {
           return status! < 500;
